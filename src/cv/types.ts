@@ -3,7 +3,7 @@ export type CvElement =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "subtitle"; text: string }
-  | { type: "text"; text: string }
+  | { type: "text"; text: string[] }
   | { type: "list"; items: string[] };
 
 export type CvColumn = CvElement[];

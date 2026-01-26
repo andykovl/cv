@@ -6,29 +6,28 @@ export const sampleCv: CvDocument = {
   name: "Andrey Kovlyagin",
 
   leftColumn: [
-    list([
+    text([
       "Barcelona, Spain",
       "andrey.kovlyagin@gmail.com",
       "+34 677 255 561",
     ]),
 
     h2("Objective"),
-    text(
+    text([
       "Full-stack Developer with a solid foundation in graphic design and a recent shift to web development. Skilled in creating visually appealing and highly functional user interfaces while ensuring robust and efficient backend systems. Proficient in modern frameworks such as React, Next.js and NestJS, with experience in database management using PostgreSQL. Passionate about enhancing user experiences.",
-    ),
+    ]),
 
     h2("Skills"),
-    list([
+    text([
       "TypeScript",
-      "React.js, Next.js, RTK, TanStack Query/Table/Form",
+      "React.js, Next.js, Astro, RTK, TanStack Query/Table/Form",
       "Sass, CSS Modules, Tailwind CSS",
-      "WebGL, SVG animations",
-      "Git, Docker, Vite, Turbopack",
-      "Node.js, NestJS, Socket.io",
-      "PostgreSQL, TypeORM, Supabase",
-      "Jest",
+      "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe CS",
+      "Node.js, NestJS, PostgreSQL, real-time (Socket.io), integrations, TypeORM, Supabase",
+      "Jest, Playwright (E2E, a11y)",
       "n8n",
-      "Figma, Adobe CS, layout design and visual communication",
+      "Git, Docker, CI/CD (GitHub Actions), production deployments",
+      "AI-assisted development (code generation, reviews, refactoring)",
       "Fluent in Russian, English B2, Spanish A2",
     ]),
   ],
@@ -38,9 +37,9 @@ export const sampleCv: CvDocument = {
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
     subtitle("Barcelona, April – October 2025"),
-    text(
+    text([
       "Contributed to the early-stage development of a fintech SaaS platform focused on AI-accounting. Collaborated closely with the CTO to build integrations and enhance the product's technical foundation.",
-    ),
+    ]),
     list([
       "Developed front-end modules using Next.js, TypeScript, TailwindCSS, and TanStack Query/Table.",
       "Integrated a Banno banking API integration. Supported integrations with Stripe, Customer.io, and PostHog.",
@@ -48,9 +47,9 @@ export const sampleCv: CvDocument = {
 
     h3("Full-Stack Developer"),
     subtitle("Barcelona, March 2023 – Present"),
-    text(
+    text([
       "Conceived, designed, and developed a project management application for designers and publishers to streamline collaboration.",
-    ),
+    ]),
     list([
       "Built the front-end with React, RTK and TailwindCSS.",
       "Integrated backend, TypeORM and PostgreSQL.",
@@ -59,9 +58,9 @@ export const sampleCv: CvDocument = {
 
     h3("Front-end Developer — Kamina Mental Health Platform"),
     subtitle("Project based, January 2024"),
-    text(
+    text([
       "Developed a responsive landing page for Kamina, a mental health platform, within one month. Collaborated directly with stakeholders to refine requirements and ensure alignment with project goals.",
-    ),
+    ]),
     list([
       "Implemented an interactive SVG graphic to enhance user engagement and visual appeal.",
       "Delivered an optimized site, ensuring compatibility across devices and browsers.",
@@ -69,9 +68,9 @@ export const sampleCv: CvDocument = {
 
     h3("Graphic Designer"),
     subtitle("Moscow, October 2017 – March 2023"),
-    text(
+    text([
       "Successfully completed diverse design projects, including corporate branding, editorial design, and wayfinding systems for public transport. Enhanced efficiency through automation scripts for batch processing in design projects.",
-    ),
+    ]),
     list([
       "Designed 10+ books.",
       "Issued 30+ magazines.",

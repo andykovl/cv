@@ -89,9 +89,16 @@ export async function generateCvPdfBlob(
         doc.setFont(fontFamily, "normal");
         doc.setFontSize(baseFontSize);
         doc.setTextColor(0, 0, 0);
-        const lines = splitTextWithHyphenation(el.text, columnWidth, doc);
-        doc.text(lines, x, y, { lineHeightFactor: lineHeight });
-        return y + lines.length * baseFontSize * lineHeight;
+        
+        let currentY = y;
+        
+        for (const textItem of el.text) {
+          const lines = splitTextWithHyphenation(textItem, columnWidth, doc);
+          doc.text(lines, x, currentY, { lineHeightFactor: lineHeight });
+          currentY += lines.length * baseFontSize * lineHeight;
+        }
+        
+        return currentY;
       }
 
       case "list": {
@@ -163,7 +170,7 @@ export async function downloadCvPdf(
 
   const a = document.createElement("a");
   a.href = url;
-  a.download = "cv.pdf";
+  a.download = "Andrey_Kovlyagin_cv.pdf";
   a.style.display = "none";
   document.body.appendChild(a);
 
