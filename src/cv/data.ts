@@ -14,22 +14,24 @@ export const sampleCv: CvDocument = {
 
     h2("Objective"),
     text([
-      "Full-stack Developer with a solid foundation in graphic design and a recent shift to web development. Skilled in creating visually appealing and highly functional user interfaces while ensuring robust and efficient backend systems. Proficient in modern frameworks such as React, Next.js and NestJS, with experience in database management using PostgreSQL. Passionate about enhancing user experiences.",
+      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS. Passionate about creating intuitive and high-quality user experiences.",
     ]),
 
     h2("Skills"),
-    text([
-      "TypeScript",
-      "React.js, Next.js, Astro, RTK, TanStack Query/Table/Form",
-      "Sass, CSS Modules, Tailwind CSS",
-      "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe CS",
-      "Node.js, NestJS, PostgreSQL, real-time (Socket.io), integrations, TypeORM, Supabase",
-      "Jest, Playwright (E2E, a11y)",
-      "n8n",
-      "Git, Docker, CI/CD (GitHub Actions), production deployments",
-      "AI-assisted development (code generation, reviews, refactoring)",
-      "Fluent in Russian, English B2, Spanish A2",
-    ]),
+    text(
+      [
+      "TypeScript, JavaScript",
+      "React, Next.js, Astro, RTK, TanStack Query/Table/Form,Tailwind CSS, CSS Modules, Sass",
+      "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io", 
+      "Docker, Git, CI/CD (GitHub Actions)",
+      "Jest, Vitest, Playwright (E2E, a11y)",
+      "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
+      "n8n, API integrations",
+      "AI-assisted engineering (specification design, planning, code review)",
+      "Languages: Russian (native), English (B2), Spanish (A2)",
+    ],
+      { paragraphSpacing: 6 },
+    ),
   ],
 
   rightColumn: [
@@ -42,18 +44,18 @@ export const sampleCv: CvDocument = {
     ]),
     list([
       "Developed front-end modules using Next.js, TypeScript, TailwindCSS, and TanStack Query/Table.",
-      "Integrated a Banno banking API integration. Supported integrations with Stripe, Customer.io, and PostHog.",
+      "Integrated a Banno banking API. Supported integrations with Stripe, Customer.io, and PostHog.",
     ]),
 
-    h3("Full-Stack Developer"),
+    h3("Founder / Full-Stack Engineer — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
-      "Conceived, designed, and developed a project management application for designers and publishers to streamline collaboration.",
-    ]),
+      "Designed and built a SaaS workflow platform for designers and publishers."]),
     list([
-      "Built the front-end with React, RTK and TailwindCSS.",
-      "Integrated backend, TypeORM and PostgreSQL.",
-      "Deployed via Docker to Hetzner.",
+      "Built the front-end with React and RTK.",
+      "Developed backend services with NestJS, TypeORM and PostgreSQL.",
+      "Real-time collaboration features and API integrations.",
+      "Containerized infra using Docker on Hetzner via GitHub Actions",
     ]),
 
     h3("Front-end Developer — Kamina Mental Health Platform"),
@@ -69,7 +71,7 @@ export const sampleCv: CvDocument = {
     h3("Graphic Designer"),
     subtitle("Moscow, October 2017 – March 2023"),
     text([
-      "Successfully completed diverse design projects, including corporate branding, editorial design, and wayfinding systems for public transport. Enhanced efficiency through automation scripts for batch processing in design projects.",
+      "Worked on editorial design, branding, and wayfinding systems for public spaces.",
     ]),
     list([
       "Designed 10+ books.",

@@ -89,15 +89,17 @@ export async function generateCvPdfBlob(
         doc.setFont(fontFamily, "normal");
         doc.setFontSize(baseFontSize);
         doc.setTextColor(0, 0, 0);
-        
+
         let currentY = y;
-        
-        for (const textItem of el.text) {
-          const lines = splitTextWithHyphenation(textItem, columnWidth, doc);
+        const spacing = el.paragraphSpacing ?? 0;
+
+        for (let i = 0; i < el.text.length; i++) {
+          if (i > 0 && spacing > 0) currentY += spacing;
+          const lines = splitTextWithHyphenation(el.text[i], columnWidth, doc);
           doc.text(lines, x, currentY, { lineHeightFactor: lineHeight });
           currentY += lines.length * baseFontSize * lineHeight;
         }
-        
+
         return currentY;
       }
 
