@@ -14,14 +14,14 @@ export const sampleCv: CvDocument = {
 
     h2("Objective"),
     text([
-      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS. Passionate about creating intuitive and high-quality user experiences.",
+      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS with end-to-end ownership across frontend, backend, and infrastructure.",
     ]),
 
     h2("Skills"),
     text(
       [
       "TypeScript, JavaScript",
-      "React, Next.js, Astro, RTK, TanStack Query/Table/Form,Tailwind CSS, CSS Modules, Sass",
+      "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
       "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io", 
       "Docker, Git, CI/CD (GitHub Actions)",
       "Jest, Vitest, Playwright (E2E, a11y)",
@@ -40,38 +40,29 @@ export const sampleCv: CvDocument = {
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
     subtitle("Barcelona, April – October 2025"),
     text([
-      "Contributed to the early-stage development of a fintech SaaS platform focused on AI-accounting. Collaborated closely with the CTO to build integrations and enhance the product's technical foundation.",
+      "Built core features and integrations for an early-stage fintech SaaS platform focused on AI-driven accounting. Worked directly with the CTO to design and implement backend integrations and core product functionality.",
     ]),
     list([
-      "Developed front-end modules using Next.js, TypeScript, TailwindCSS, and TanStack Query/Table.",
-      "Integrated a Banno banking API. Supported integrations with Stripe, Customer.io, and PostHog.",
+      "Developed production frontend features using Next.js, TypeScript, and TanStack Query, focusing on performance and maintainability.",
+      "Implemented and maintained integrations with banking APIs (Banno), Stripe, Customer.io, and PostHog, ensuring reliable data flow and system stability.",
     ]),
 
     h3("Founder / Full-Stack Engineer — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
-      "Designed and built a SaaS workflow platform for designers and publishers."]),
+      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch."]),
     list([
-      "Built the front-end with React and RTK.",
-      "Developed backend services with NestJS, TypeORM and PostgreSQL.",
-      "Real-time collaboration features and API integrations.",
-      "Containerized infra using Docker on Hetzner via GitHub Actions",
-    ]),
-
-    h3("Front-end Developer — Kamina Mental Health Platform"),
-    subtitle("Project based, January 2024"),
-    text([
-      "Developed a responsive landing page for Kamina, a mental health platform, within one month. Collaborated directly with stakeholders to refine requirements and ensure alignment with project goals.",
-    ]),
-    list([
-      "Implemented an interactive SVG graphic to enhance user engagement and visual appeal.",
-      "Delivered an optimized site, ensuring compatibility across devices and browsers.",
+      "Developed a complex frontend application using React and Redux Toolkit, including dynamic UI and state management.",
+      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
+      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
+      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
+      "Owned the product end-to-end, including architecture, development, and deployment.",
     ]),
 
     h3("Graphic Designer"),
     subtitle("Moscow, October 2017 – March 2023"),
     text([
-      "Worked on editorial design, branding, and wayfinding systems for public spaces.",
+      "Designed editorial, branding, and wayfinding systems for public spaces.",
     ]),
     list([
       "Designed 10+ books.",
