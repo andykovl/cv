@@ -23,7 +23,7 @@ export const sampleCv: CvDocument = {
       "TypeScript, JavaScript",
       "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
       "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
-      "Core Web Vitals (LCP, CLS, INP), lazy loading, virtualization, bundle analysis",
+      "Core Web Vitals, lazy loading, virtualization, bundle analysis",
       "Jest, Vitest, Playwright (E2E, a11y)",
       "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io, API integrations", 
       "Docker, Git, CI/CD (GitHub Actions)",
