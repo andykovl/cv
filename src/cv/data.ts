@@ -14,7 +14,7 @@ export const sampleCv: CvDocument = {
 
     h2("Objective"),
     text([
-      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS with end-to-end ownership across frontend, backend, and infrastructure.",
+      "Frontend focused Full-Stack Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS with end-to-end ownership across frontend, backend, and infrastructure.",
     ]),
 
     h2("Skills"),
@@ -22,11 +22,11 @@ export const sampleCv: CvDocument = {
       [
       "TypeScript, JavaScript",
       "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
-      "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io", 
-      "Docker, Git, CI/CD (GitHub Actions)",
-      "Jest, Vitest, Playwright (E2E, a11y)",
       "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
-      "n8n, API integrations",
+      "Core Web Vitals (LCP, CLS, INP), lazy loading, virtualization, bundle analysis",
+      "Jest, Vitest, Playwright (E2E, a11y)",
+      "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io, API integrations", 
+      "Docker, Git, CI/CD (GitHub Actions)",
       "AI-assisted engineering (specification design, planning, code review)",
       "Languages: Russian (native), English (B2), Spanish (A2)",
     ],
@@ -51,13 +51,13 @@ export const sampleCv: CvDocument = {
     subtitle("Barcelona, March 2023 – Present"),
     text([
       "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch."]),
-    list([
-      "Developed a complex frontend application using React and Redux Toolkit, including dynamic UI and state management.",
-      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
-      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
-      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
-      "Owned the product end-to-end, including architecture, development, and deployment.",
-    ]),
+      list([
+        "Built complex React + TypeScript interfaces (tables, canvas, PDF workflows) with predictable client state using Redux Toolkit and Zustand.",
+        "Implemented advanced UI interactions: edge-aware drag-and-drop reordering, zoom/pan graph canvas, and polished state-driven micro-interactions.",
+        "Improved frontend performance with PDF virtualization (TanStack Virtual + PDF.js), route-level lazy loading, code splitting, and bundle analysis/manual chunking.",
+        "Developed real-time collaboration features with WebSockets, including live annotation sync, presence/cursors, and reconnect-safe behavior.",
+        "Delivered full-stack product ownership: NestJS + PostgreSQL backend architecture, API design, and CI/CD with Docker + GitHub Actions on Hetzner.",
+      ]),
 
     h3("Graphic Designer"),
     subtitle("Moscow, October 2017 – March 2023"),
