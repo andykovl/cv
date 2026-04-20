@@ -21,7 +21,7 @@ export const sampleCv: CvDocument = {
     text(
       [
       "TypeScript, JavaScript",
-      "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
+      "React, Next.js, Astro, RTK, TanStack Query/Table/Form, CSS3/SCSS, Tailwind CSS, CSS Modules, Shadcn",
       "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
       "Core Web Vitals, lazy loading, virtualization, bundle analysis",
       "Jest, Vitest, Playwright (E2E, a11y)",
