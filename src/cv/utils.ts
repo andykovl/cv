@@ -45,7 +45,10 @@ export function splitTextWithHyphenation(
             continue;
           }
           
-          const candidateLine = `${currentLine} ${firstPart}-`;
+          // Hypher keeps in-word hyphens in segments (e.g. "end-to-end" → "end-" + "to-end");
+          // do not append a second break hyphen after firstPart already ends with "-".
+          const breakHyphen = firstPart.endsWith("-") ? "" : "-";
+          const candidateLine = `${currentLine} ${firstPart}${breakHyphen}`;
           if (doc.getTextWidth(candidateLine) <= maxWidth) {
             allLines.push(candidateLine);
             currentLine = secondPart;
