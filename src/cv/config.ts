@@ -1,7 +1,7 @@
 import type { CvLayoutConfig } from "./types";
 
 export const defaultCvConfig: CvLayoutConfig = {
-  fontFamily: "helvetica",
+  fontFamily: "Roboto",
   baseFontSize: 12,
   h1FontSize: 20,
   h2FontSize: 16,

@@ -7,17 +7,17 @@ export const sampleCv: CvDocument = {
 
   leftColumn: [
     text([
-      "Barcelona, Spain",
+      "Барселона, Испания",
       "andrey.kovlyagin@gmail.com",
       "+34 677 255 561",
     ]),
 
-    h2("Objective"),
+    h2("Цель"),
     text([
-      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS with end-to-end ownership across frontend, backend, and infrastructure.",
+      "Full-Stack TypeScript-разработчик с опытом в графическом дизайне. Создаю веб-приложения на React, Next.js и NestJS с полным владением frontend, backend и инфраструктурой.",
     ]),
 
-    h2("Skills"),
+    h2("Навыки"),
     text(
       [
       "TypeScript, JavaScript",
@@ -25,49 +25,49 @@ export const sampleCv: CvDocument = {
       "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io", 
       "Docker, Git, CI/CD (GitHub Actions)",
       "Jest, Vitest, Playwright (E2E, a11y)",
-      "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
-      "n8n, API integrations",
-      "AI-assisted engineering (specification design, planning, code review)",
-      "Languages: Russian (native), English (B2), Spanish (A2)",
+      "UI/UX, сложные интерфейсы, SVG/canvas-интерфейсы, Figma, Adobe Creative Suite",
+      "n8n, API-интеграции",
+      "AI-assisted engineering (спецификации, планирование, code review)",
+      "Языки: русский (родной), английский (B2), испанский (A2)",
     ],
       { paragraphSpacing: 6 },
     ),
   ],
 
   rightColumn: [
-    h2("Professional Experience"),
+    h2("Опыт работы"),
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
-    subtitle("Barcelona, April – October 2025"),
+    subtitle("Барселона, апрель – октябрь 2025"),
     text([
-      "Built core features and integrations for an early-stage fintech SaaS platform focused on AI-driven accounting. Worked directly with the CTO to design and implement backend integrations and core product functionality.",
+      "Разрабатывал ключевые функции и интеграции для fintech SaaS-платформы с AI-бухгалтерией. Работал напрямую с CTO над backend-интеграциями и основным функционалом продукта.",
     ]),
     list([
-      "Developed production frontend features using Next.js, TypeScript, and TanStack Query, focusing on performance and maintainability.",
-      "Implemented and maintained integrations with banking APIs (Banno), Stripe, Customer.io, and PostHog, ensuring reliable data flow and system stability.",
+      "Разработал production-фичи на Next.js, TypeScript и TanStack Query с фокусом на производительность и поддерживаемость.",
+      "Реализовал интеграции с банковскими API (Banno), Stripe, Customer.io и PostHog, обеспечив надёжный поток данных и стабильность системы.",
     ]),
 
     h3("Founder / Full-Stack Engineer — Chains.design"),
-    subtitle("Barcelona, March 2023 – Present"),
+    subtitle("Барселона, март 2023 – настоящее время"),
     text([
-      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch."]),
+      "Спроектировал и разработал с нуля full-stack SaaS-платформу для дизайнеров и издателей."]),
     list([
-      "Developed a complex frontend application using React and Redux Toolkit, including dynamic UI and state management.",
-      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
-      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
-      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
-      "Owned the product end-to-end, including architecture, development, and deployment.",
+      "Разработал сложное frontend-приложение на React и Redux Toolkit с динамическим UI и управлением состоянием.",
+      "Спроектировал backend-архитектуру на NestJS, TypeORM и PostgreSQL, включая API и модели данных.",
+      "Реализовал real-time коллаборацию через WebSockets и интеграции с внешними API.",
+      "Настроил CI/CD-пайплайны и контейнеризованный деплой на Docker и GitHub Actions на Hetzner.",
+      "Полностью владел продуктом: архитектура, разработка и деплой.",
     ]),
 
-    h3("Graphic Designer"),
-    subtitle("Moscow, October 2017 – March 2023"),
+    h3("Графический дизайнер"),
+    subtitle("Москва, октябрь 2017 – март 2023"),
     text([
-      "Designed editorial, branding, and wayfinding systems for public spaces.",
+      "Создавал книги, журналы, айдентику и навигационные системы для публичных пространств.",
     ]),
     list([
-      "Designed 10+ books.",
-      "Issued 30+ magazines.",
-      "Prepared 150+ wayfinding stands for public spaces.",
+      "Спроектировал 10+ книг.",
+      "Выпустил 30+ номеров журналов.",
+      "Подготовил 150+ навигационных стендов для публичных пространств.",
     ]),
   ],
 };

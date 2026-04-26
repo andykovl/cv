@@ -1,6 +1,8 @@
 import { jsPDF } from "jspdf";
 import { splitTextWithHyphenation } from "./utils";
 import type { CvColumn, CvDocument, CvElement, CvLayoutConfig } from "./types";
+import { RobotoRegular } from "./fonts/Roboto-Regular";
+import { RobotoBold } from "./fonts/Roboto-Bold";
 
 export async function generateCvPdfBlob(
   config: CvLayoutConfig,
@@ -10,6 +12,11 @@ export async function generateCvPdfBlob(
     unit: "pt",
     format: "a4",
   });
+
+  doc.addFileToVFS("Roboto-Regular.ttf", RobotoRegular);
+  doc.addFileToVFS("Roboto-Bold.ttf", RobotoBold);
+  doc.addFont("Roboto-Regular.ttf", "Roboto", "normal");
+  doc.addFont("Roboto-Bold.ttf", "Roboto", "bold");
 
   const pageWidth = doc.internal.pageSize.getWidth();
 
