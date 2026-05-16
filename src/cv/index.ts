@@ -1,12 +1,13 @@
 import { createButton } from "../ui/button";
-import { downloadIcon } from "../ui/icons";
+import { downloadIcon, fileTextIcon } from "../ui/icons";
 import { defaultCvConfig } from "./config";
 import { sampleCv } from "./data";
 import { downloadCvPdf } from "./generate";
+import { openCvMarkdown } from "./markdown";
 
 export function createCvDownloader(): HTMLDivElement {
   const cvColumn = document.createElement("div");
-  cvColumn.className = "flex flex-col items-start";
+  cvColumn.className = "flex flex-wrap items-start gap-3";
 
   const btnMain = createButton("Download CV", {
     variant: "default",
@@ -27,8 +28,16 @@ export function createCvDownloader(): HTMLDivElement {
     },
   });
 
+  const btnMarkdown = createButton("View Markdown", {
+    variant: "outline",
+    icon: fileTextIcon,
+    onClick: () => {
+      openCvMarkdown(sampleCv);
+    },
+  });
+
   cvColumn.appendChild(btnMain);
+  cvColumn.appendChild(btnMarkdown);
 
   return cvColumn;
 }
-

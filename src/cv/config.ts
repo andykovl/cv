@@ -13,6 +13,4 @@ export const defaultCvConfig: CvLayoutConfig = {
     bottom: 40,
     left: 40,
   },
-  columnWidths: [180, 331],
-  gap: 24,
 };

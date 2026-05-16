@@ -1,11 +1,10 @@
 import type { CvDocument } from "./types";
 import { list, h2, text, h3, subtitle } from "./helpers";
 
-
 export const sampleCv: CvDocument = {
   name: "Andrey Kovlyagin",
 
-  leftColumn: [
+  content: [
     text([
       "Barcelona, Spain",
       "andrey.kovlyagin@gmail.com",
@@ -20,21 +19,19 @@ export const sampleCv: CvDocument = {
     h2("Skills"),
     text(
       [
-      "TypeScript, JavaScript",
-      "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
-      "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io", 
-      "Docker, Git, CI/CD (GitHub Actions)",
-      "Jest, Vitest, Playwright (E2E, a11y)",
-      "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
-      "n8n, API integrations",
-      "AI-assisted engineering (specification design, planning, code review)",
-      "Languages: Russian (native), English (B2), Spanish (A2)",
-    ],
+        "TypeScript, JavaScript",
+        "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
+        "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io",
+        "Docker, Git, CI/CD (GitHub Actions)",
+        "Jest, Vitest, Playwright (E2E, a11y)",
+        "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
+        "n8n, API integrations",
+        "AI-assisted engineering (specification design, planning, code review)",
+        "Languages: Russian (native), English (B2), Spanish (A2)",
+      ],
       { paragraphSpacing: 6 },
     ),
-  ],
 
-  rightColumn: [
     h2("Professional Experience"),
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
@@ -50,7 +47,8 @@ export const sampleCv: CvDocument = {
     h3("Founder / Full-Stack Engineer — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
-      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch."]),
+      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch.",
+    ]),
     list([
       "Developed a complex frontend application using React and Redux Toolkit, including dynamic UI and state management.",
       "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",

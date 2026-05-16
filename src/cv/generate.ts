@@ -1,6 +1,6 @@
 import { jsPDF } from "jspdf";
 import { splitTextWithHyphenation } from "./utils";
-import type { CvColumn, CvDocument, CvElement, CvLayoutConfig } from "./types";
+import type { CvDocument, CvElement, CvLayoutConfig } from "./types";
 
 export async function generateCvPdfBlob(
   config: CvLayoutConfig,
@@ -12,6 +12,7 @@ export async function generateCvPdfBlob(
   });
 
   const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
 
   const {
     fontFamily,
@@ -21,68 +22,85 @@ export async function generateCvPdfBlob(
     lineHeight,
     subtitleColor,
     pageMargin,
-    columnWidths,
-    gap,
   } = config;
 
   const contentWidth = pageWidth - pageMargin.left - pageMargin.right;
-  const availableWidth = contentWidth - gap;
-  const totalColumnUnits = columnWidths.reduce((sum, w) => sum + w, 0);
-
-  const leftColumnWidth = (availableWidth * columnWidths[0]) / totalColumnUnits;
-  const rightColumnWidth = availableWidth - leftColumnWidth;
-
-  const leftX = pageMargin.left;
-  const rightX = pageMargin.left + leftColumnWidth + gap;
+  const contentX = pageMargin.left;
+  const bottomY = pageHeight - pageMargin.bottom;
 
   let cursorY = pageMargin.top;
 
-  doc.setFont(fontFamily, "bold");
-  doc.setFontSize(h1FontSize);
-  doc.setTextColor(0, 0, 0);
-  doc.text(cv.name, leftX, cursorY, { lineHeightFactor: lineHeight });
-  cursorY += h1FontSize * lineHeight;
+  const lineHeightFor = (fontSize: number) => fontSize * lineHeight;
 
-  const renderElement = (
-    el: CvElement,
-    x: number,
-    y: number,
-    columnWidth: number,
-  ): number => {
+  const addPage = () => {
+    doc.addPage();
+    cursorY = pageMargin.top;
+  };
+
+  const ensureSpace = (height: number) => {
+    if (cursorY > pageMargin.top && cursorY + height > bottomY) {
+      addPage();
+    }
+  };
+
+  const addVerticalSpace = (height: number) => {
+    if (cursorY + height > bottomY) {
+      addPage();
+      return;
+    }
+
+    cursorY += height;
+  };
+
+  const writeLines = (lines: string[], x: number, fontSize: number) => {
+    const lineHeightPt = lineHeightFor(fontSize);
+
+    for (const line of lines) {
+      ensureSpace(lineHeightPt);
+      doc.text(line, x, cursorY, { lineHeightFactor: lineHeight });
+      cursorY += lineHeightPt;
+    }
+  };
+
+  const renderElement = (el: CvElement) => {
     switch (el.type) {
       case "h1": {
         doc.setFont(fontFamily, "bold");
         doc.setFontSize(h1FontSize);
         doc.setTextColor(0, 0, 0);
-        doc.text(el.text, x, y, { lineHeightFactor: lineHeight });
-        return y + h1FontSize * lineHeight;
+        const lines = doc.splitTextToSize(el.text, contentWidth);
+        ensureSpace(lines.length * lineHeightFor(h1FontSize));
+        writeLines(lines, contentX, h1FontSize);
+        break;
       }
 
       case "h2": {
         doc.setFont(fontFamily, "bold");
         doc.setFontSize(h2FontSize);
         doc.setTextColor(0, 0, 0);
-        const lines = doc.splitTextToSize(el.text, columnWidth);
-        doc.text(lines, x, y, { lineHeightFactor: lineHeight });
-        return y + lines.length * h2FontSize * lineHeight;
+        const lines = doc.splitTextToSize(el.text, contentWidth);
+        ensureSpace(lines.length * lineHeightFor(h2FontSize));
+        writeLines(lines, contentX, h2FontSize);
+        break;
       }
 
       case "h3": {
         doc.setFont(fontFamily, "bold");
         doc.setFontSize(baseFontSize);
         doc.setTextColor(0, 0, 0);
-        const lines = doc.splitTextToSize(el.text, columnWidth);
-        doc.text(lines, x, y, { lineHeightFactor: lineHeight });
-        return y + lines.length * baseFontSize * lineHeight;
+        const lines = doc.splitTextToSize(el.text, contentWidth);
+        ensureSpace(lines.length * lineHeightFor(baseFontSize));
+        writeLines(lines, contentX, baseFontSize);
+        break;
       }
 
       case "subtitle": {
         doc.setFont(fontFamily, "normal");
         doc.setFontSize(baseFontSize);
         doc.setTextColor(subtitleColor);
-        const lines = splitTextWithHyphenation(el.text, columnWidth, doc);
-        doc.text(lines, x, y, { lineHeightFactor: lineHeight });
-        return y + lines.length * baseFontSize * lineHeight;
+        const lines = splitTextWithHyphenation(el.text, contentWidth, doc);
+        writeLines(lines, contentX, baseFontSize);
+        break;
       }
 
       case "text": {
@@ -90,17 +108,15 @@ export async function generateCvPdfBlob(
         doc.setFontSize(baseFontSize);
         doc.setTextColor(0, 0, 0);
 
-        let currentY = y;
         const spacing = el.paragraphSpacing ?? 0;
 
         for (let i = 0; i < el.text.length; i++) {
-          if (i > 0 && spacing > 0) currentY += spacing;
-          const lines = splitTextWithHyphenation(el.text[i], columnWidth, doc);
-          doc.text(lines, x, currentY, { lineHeightFactor: lineHeight });
-          currentY += lines.length * baseFontSize * lineHeight;
+          if (i > 0 && spacing > 0) addVerticalSpace(spacing);
+          const lines = splitTextWithHyphenation(el.text[i], contentWidth, doc);
+          writeLines(lines, contentX, baseFontSize);
         }
 
-        return currentY;
+        break;
       }
 
       case "list": {
@@ -110,55 +126,49 @@ export async function generateCvPdfBlob(
 
         const bullet = "— ";
         const bulletWidth = doc.getTextWidth(bullet);
-        const textWidth = columnWidth - bulletWidth;
-
-        let currentY = y;
+        const textWidth = contentWidth - bulletWidth;
+        const lineHeightPt = lineHeightFor(baseFontSize);
 
         for (const item of el.items) {
-          doc.text(bullet, x, currentY, { lineHeightFactor: lineHeight });
-
           const lines: string[] = splitTextWithHyphenation(item, textWidth, doc);
 
-          for (const line of lines) {
-            doc.text(line, x + bulletWidth, currentY, { lineHeightFactor: lineHeight });
-            currentY += baseFontSize * lineHeight;
+          for (let i = 0; i < lines.length; i++) {
+            ensureSpace(lineHeightPt);
+
+            if (i === 0) {
+              doc.text(bullet, contentX, cursorY, { lineHeightFactor: lineHeight });
+            }
+
+            doc.text(lines[i], contentX + bulletWidth, cursorY, {
+              lineHeightFactor: lineHeight,
+            });
+            cursorY += lineHeightPt;
           }
         }
 
-        return currentY;
+        break;
       }
     }
   };
 
-  const renderColumn = (
-    column: CvColumn,
-    x: number,
-    startY: number,
-    columnWidth: number,
-  ): number => {
-    let y = startY;
+  renderElement({ type: "h1", text: cv.name });
 
-    for (let i = 0; i < column.length; i++) {
-      const el = column[i];
-      
-      if (el.type === 'h2' && i > 0) {
-        y += baseFontSize * lineHeight;
-      }
-      if (el.type === 'h3' && i > 0) {
-        y += baseFontSize * 0.5;
-      }
-      
-      y = renderElement(el, x, y, columnWidth);
-      if (el.type === 'list' || el.type === 'text') {
-        y += baseFontSize * 0.5;
-      }
+  for (let i = 0; i < cv.content.length; i++) {
+    const el = cv.content[i];
+
+    if (el.type === "h2" && i > 0) {
+      addVerticalSpace(baseFontSize * lineHeight);
+    }
+    if (el.type === "h3" && i > 0) {
+      addVerticalSpace(baseFontSize * 0.5);
     }
 
-    return y;
-  };
+    renderElement(el);
 
-  renderColumn(cv.leftColumn, leftX, cursorY, leftColumnWidth);
-  renderColumn(cv.rightColumn, rightX, cursorY, rightColumnWidth);
+    if (i < cv.content.length - 1 && (el.type === "list" || el.type === "text")) {
+      addVerticalSpace(baseFontSize * 0.5);
+    }
+  }
 
   return doc.output("blob") as Blob;
 }
