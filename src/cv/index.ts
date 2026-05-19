@@ -28,7 +28,7 @@ export function createCvDownloader(): HTMLDivElement {
     },
   });
 
-  const btnMarkdown = createButton("View Markdown", {
+  const btnMarkdown = createButton(".md", {
     variant: "outline",
     icon: fileTextIcon,
     onClick: () => {
