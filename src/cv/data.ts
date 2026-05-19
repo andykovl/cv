@@ -44,6 +44,17 @@ export const sampleCv: CvDocument = {
       "Implemented and maintained integrations with banking APIs (Banno), Stripe, Customer.io, and PostHog, ensuring reliable data flow and system stability.",
     ]),
 
+    h3("Front-end Developer — Kamina Mental Health Platform"),
+    subtitle("Project-based, January 2024"),
+    text([
+      "Developed a responsive landing page for Kamina, a mental health platform, within one month.",
+    ]),
+    list([
+      "Collaborated directly with stakeholders to refine requirements and ensure alignment with project goals.",
+      "Implemented an interactive SVG graphic to enhance user engagement and visual appeal.",
+      "Delivered an optimized site, ensuring compatibility across devices and browsers.",
+    ]),
+
     h3("Founder / Full-Stack Engineer — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
@@ -55,6 +66,16 @@ export const sampleCv: CvDocument = {
       "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
       "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
       "Owned the product end-to-end, including architecture, development, and deployment.",
+    ]),
+
+    h3("Web Developer — Tomita Software"),
+    subtitle("October 2020 – May 2023"),
+    text([
+      "Supported 10 client web platforms in a ticket-driven workflow: diagnosing UI/layout issues and shipping incremental fixes across Symfony and React codebases.",
+    ]),
+    list([
+      "Built several marketing sites from scratch; day-to-day work focused on production maintenance—small functional updates, template/CSS adjustments.",
+      "Collaborated with stakeholders to clarify requirements and prioritize backlog items.",
     ]),
 
     h3("Graphic Designer"),
