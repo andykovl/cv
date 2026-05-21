@@ -71,11 +71,12 @@ export const sampleCv: CvDocument = {
     h3("Web Developer — Tomita Software"),
     subtitle("October 2020 – May 2023"),
     text([
-      "Supported 10 client web platforms in a ticket-driven workflow: diagnosing UI/layout issues and shipping incremental fixes across Symfony and React codebases.",
+      "Front-end developer at a custom IT solutions provider for SMBs, working on dedicated client project teams across 10 production web applications — greenfield React builds and ongoing UI work on live Symfony and React products.",
     ]),
     list([
-      "Built several marketing sites from scratch; day-to-day work focused on production maintenance—small functional updates, template/CSS adjustments.",
-      "Collaborated with stakeholders to clarify requirements and prioritize backlog items.",
+      "Built 3 client projects from scratch in React, including marketing landings and in-app dashboards; on greenfield engagements, worked directly with clients alongside their external designers.",
+      "Shipped UI and functional updates on existing products: layout systems, templates, CSS, and landing-page markup on Symfony-based sites.",
+      "Collaborated with clients and project managers to clarify requirements, prioritize backlog items, and execute PM-scoped deliverables.",
     ]),
 
     h3("Graphic Designer"),
