@@ -20,7 +20,7 @@ export const sampleCv: CvDocument = {
     text(
       [
         "TypeScript, JavaScript",
-        "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Tailwind CSS, CSS Modules, Sass",
+        "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Storybook, Tailwind CSS, CSS Modules, Sass",
         "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io",
         "Docker, Git, CI/CD (GitHub Actions)",
         "Jest, Vitest, Playwright (E2E, a11y)",
@@ -33,6 +33,20 @@ export const sampleCv: CvDocument = {
     ),
 
     h2("Professional Experience"),
+
+    h3("Founder / Full-Stack Engineer — Chains.design"),
+    subtitle("Barcelona, March 2023 – Present"),
+    text([
+      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch.",
+    ]),
+    list([
+      "Developed a complex frontend application using React, including dynamic UI and state management.",
+      "Used Storybook to visualize and validate component state across scenarios while building complex Redux Toolkit logic.",
+      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
+      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
+      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
+      "Owned the product end-to-end, including architecture, development, and deployment.",
+    ]),
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
     subtitle("Barcelona, April – October 2025"),
@@ -55,27 +69,15 @@ export const sampleCv: CvDocument = {
       "Delivered an optimized site, ensuring compatibility across devices and browsers.",
     ]),
 
-    h3("Founder / Full-Stack Engineer — Chains.design"),
-    subtitle("Barcelona, March 2023 – Present"),
-    text([
-      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch.",
-    ]),
-    list([
-      "Developed a complex frontend application using React and Redux Toolkit, including dynamic UI and state management.",
-      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
-      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
-      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
-      "Owned the product end-to-end, including architecture, development, and deployment.",
-    ]),
-
     h3("Web Developer — Tomita Software"),
     subtitle("October 2020 – May 2023"),
     text([
-      "Supported 10 client web platforms in a ticket-driven workflow: diagnosing UI/layout issues and shipping incremental fixes across Symfony and React codebases.",
+      "Front-end developer at a custom IT solutions provider for SMBs, working on dedicated client project teams across 10 production web applications — greenfield React builds and ongoing UI work on live Symfony and React products.",
     ]),
     list([
-      "Built several marketing sites from scratch; day-to-day work focused on production maintenance—small functional updates, template/CSS adjustments.",
-      "Collaborated with stakeholders to clarify requirements and prioritize backlog items.",
+      "Built 3 client projects from scratch in React, including marketing landings and in-app dashboards; on greenfield engagements, worked directly with clients alongside their external designers.",
+      "Shipped UI and functional updates on existing products: layout systems, templates, CSS, and landing-page markup on Symfony-based sites.",
+      "Collaborated with clients and project managers to clarify requirements, prioritize backlog items, and execute PM-scoped deliverables.",
     ]),
 
     h3("Graphic Designer"),
