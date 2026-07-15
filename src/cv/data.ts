@@ -12,7 +12,7 @@ export const sampleCv: CvDocument = {
           text: "andrey.kovlyagin@gmail.com",
           url: "mailto:andrey.kovlyagin@gmail.com",
         },
-        { text: " · " },
+        { text: "  · " },
         { text: "+34 677 255 561", url: "tel:+34677255561" },
       ],
       [
