@@ -1,4 +1,4 @@
-import type { CvElement } from "./types";
+import type { CvElement, CvTextRun } from "./types";
 
 export const h2 = (text: string): CvElement => ({ type: "h2", text });
 export const h3 = (text: string): CvElement => ({ type: "h3", text });
@@ -10,4 +10,11 @@ export const text = (
   opts?.paragraphSpacing != null
     ? { type: "text", text: items, paragraphSpacing: opts.paragraphSpacing }
     : { type: "text", text: items };
+export const richText = (
+  lines: CvTextRun[][],
+  opts?: { paragraphSpacing?: number },
+): CvElement =>
+  opts?.paragraphSpacing != null
+    ? { type: "richText", lines, paragraphSpacing: opts.paragraphSpacing }
+    : { type: "richText", lines };
 export const list = (items: string[]): CvElement => ({ type: "list", items });

@@ -1,9 +1,19 @@
+export type CvTextRun = {
+  text: string;
+  url?: string;
+};
+
 export type CvElement =
   | { type: "h1"; text: string }
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "subtitle"; text: string }
   | { type: "text"; text: string[]; paragraphSpacing?: number }
+  | {
+      type: "richText";
+      lines: CvTextRun[][];
+      paragraphSpacing?: number;
+    }
   | { type: "list"; items: string[] };
 
 export type CvDocument = {

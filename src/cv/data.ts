@@ -1,51 +1,72 @@
 import type { CvDocument } from "./types";
-import { list, h2, text, h3, subtitle } from "./helpers";
+import { list, h2, text, h3, richText, subtitle } from "./helpers";
 
 export const sampleCv: CvDocument = {
   name: "Andrey Kovlyagin",
 
   content: [
-    text([
-      "Barcelona, Spain",
-      "andrey.kovlyagin@gmail.com",
-      "+34 677 255 561",
+    richText([
+      [{ text: "Barcelona, Spain" }],
+      [
+        {
+          text: "andrey.kovlyagin@gmail.com",
+          url: "mailto:andrey.kovlyagin@gmail.com",
+        },
+        { text: " · " },
+        { text: "+34 677 255 561", url: "tel:+34677255561" },
+      ],
+      [
+        {
+          text: "github.com/andykovl",
+          url: "https://github.com/andykovl",
+        },
+        { text: " · " },
+        {
+          text: "linkedin.com/in/andrey-kovlyagin",
+          url: "https://www.linkedin.com/in/andrey-kovlyagin",
+        },
+        { text: " · " },
+        { text: "chains.design", url: "https://chains.design" },
+      ],
     ]),
 
-    h2("Objective"),
+    h2("Professional Summary"),
     text([
-      "Full-Stack TypeScript Developer with a background in graphic design, building modern web applications with React, Next.js, and NestJS with end-to-end ownership across frontend, backend, and infrastructure.",
+      "Full-Stack TypeScript Engineer and product founder with a background in graphic design, building and operating complex SaaS products across frontend, backend, and infrastructure. Agent-first in daily development: I turn product requirements into specifications and use coding agents as the primary implementation interface while owning architecture, verification, and production outcomes.",
     ]),
 
     h2("Skills"),
     text(
       [
-        "TypeScript, JavaScript",
-        "React, Next.js, Astro, RTK, TanStack Query/Table/Form, Storybook, Tailwind CSS, CSS Modules, Sass",
-        "Node.js, NestJS, PostgreSQL, TypeORM, Supabase, Socket.io",
-        "Docker, Git, CI/CD (GitHub Actions)",
-        "Jest, Vitest, Playwright (E2E, a11y)",
-        "UI/UX, complex interfaces, SVG/canvas-based interfaces, Figma, Adobe Creative Suite",
-        "n8n, API integrations",
-        "AI-assisted engineering (specification design, planning, code review)",
-        "Languages: Russian (native), English (B2), Spanish (A2)",
+        "Core: TypeScript, JavaScript",
+        "Frontend: React, Next.js, Vite, Astro, Redux Toolkit, TanStack Query, TanStack Table, Zustand, Storybook, Tailwind CSS",
+        "Backend & Data: Node.js, NestJS, PostgreSQL, TypeORM, Supabase Auth/Storage, Socket.IO, REST/OpenAPI",
+        "Testing: Jest, Vitest, Playwright (E2E, accessibility)",
+        "Platform: Docker, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
+        "Product & Design: UI/UX, complex interfaces, SVG/canvas/PDF interfaces, Figma, Adobe Creative Suite",
+        "Integrations & Automation: API integrations, n8n, Sentry, PostHog",
+        "Agentic Engineering: coding agents as the primary daily implementation interface for specification design, planning, implementation, testing, code review, and security audits",
       ],
       { paragraphSpacing: 6 },
     ),
+
+    h3("Languages"),
+    text(["Russian (native), English (B2), Spanish (A2)"]),
 
     h2("Professional Experience"),
 
     h3("Founder / Full-Stack Engineer — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
-      "Designed and developed a full-stack SaaS workflow platform for designers and publishers from scratch.",
+      "Built and operate a private-beta, multi-tenant workflow SaaS for editorial and design teams, used in production by a three-person external pilot team for two years, while owning product discovery, UX, architecture, development, and infrastructure end to end.",
     ]),
     list([
-      "Developed a complex frontend application using React, including dynamic UI and state management.",
-      "Used Storybook to visualize and validate component state across scenarios while building complex Redux Toolkit logic.",
-      "Designed and implemented backend architecture using NestJS, TypeORM, and PostgreSQL, including API design and data modeling.",
-      "Implemented real-time collaboration features using WebSockets and integrated multiple external APIs.",
-      "Set up CI/CD pipelines and containerized deployment using Docker and GitHub Actions on Hetzner infrastructure.",
-      "Owned the product end-to-end, including architecture, development, and deployment.",
+      "Designed a visual DAG workflow builder with reusable templates, parallel branches and merge points, phase roles, per-work assignments, and a server-authoritative runtime that derives status and actionability from commits and approvals.",
+      "Built a real-time collaborative PDF review workspace with virtualized rendering, live presence and cursors, optimistic annotation editing, Socket.IO reconciliation, version-aware snapshots, and native-annotation PDF export.",
+      "Designed a scalable frontend architecture using TanStack Query for server state and Zustand for interaction state, with optimistic updates, targeted cache invalidation, and resilient real-time synchronization.",
+      "Designed a NestJS/PostgreSQL backend with TypeORM, shared typed HTTP/WebSocket contracts, tenant-aware authorization, Supabase Auth/Storage and hardened file handling.",
+      "Integrated Sentry and PostHog across client and server for observability and product analytics, and built secure Telegram account-linking and notification workflows with one-time tokens and transactional email delivery through Resend.",
+      "Established layered quality gates with Vitest, PostgreSQL-backed module and integration tests, Playwright full-stack E2E, Storybook, and Biome; built selective Docker/GitHub Actions delivery through GHCR to Hetzner with health checks and route smoke tests.",
     ]),
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),

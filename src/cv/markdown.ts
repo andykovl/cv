@@ -17,6 +17,19 @@ function elementToMarkdown(el: CvElement): string[] {
     case "text":
       return [el.text.map((line) => `${line}  `).join("\n").trimEnd()];
 
+    case "richText":
+      return [
+        el.lines
+          .map((line) =>
+            line
+              .map((run) => (run.url ? `[${run.text}](${run.url})` : run.text))
+              .join(""),
+          )
+          .map((line) => `${line}  `)
+          .join("\n")
+          .trimEnd(),
+      ];
+
     case "list":
       return [el.items.map((item) => `- ${item}`).join("\n")];
   }

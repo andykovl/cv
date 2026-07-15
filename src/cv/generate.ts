@@ -119,6 +119,36 @@ export async function generateCvPdfBlob(
         break;
       }
 
+      case "richText": {
+        doc.setFont(fontFamily, "normal");
+        doc.setFontSize(baseFontSize);
+        doc.setTextColor(0, 0, 0);
+
+        const spacing = el.paragraphSpacing ?? 0;
+        const lineHeightPt = lineHeightFor(baseFontSize);
+
+        for (let i = 0; i < el.lines.length; i++) {
+          if (i > 0 && spacing > 0) addVerticalSpace(spacing);
+          ensureSpace(lineHeightPt);
+
+          let runX = contentX;
+          for (const run of el.lines[i]) {
+            if (run.url) {
+              doc.textWithLink(run.text, runX, cursorY, { url: run.url });
+            } else {
+              doc.text(run.text, runX, cursorY, {
+                lineHeightFactor: lineHeight,
+              });
+            }
+            runX += doc.getTextWidth(run.text);
+          }
+
+          cursorY += lineHeightPt;
+        }
+
+        break;
+      }
+
       case "list": {
         doc.setFont(fontFamily, "normal");
         doc.setFontSize(baseFontSize);
@@ -131,10 +161,9 @@ export async function generateCvPdfBlob(
 
         for (const item of el.items) {
           const lines: string[] = splitTextWithHyphenation(item, textWidth, doc);
+          ensureSpace(lines.length * lineHeightPt);
 
           for (let i = 0; i < lines.length; i++) {
-            ensureSpace(lineHeightPt);
-
             if (i === 0) {
               doc.text(bullet, contentX, cursorY, { lineHeightFactor: lineHeight });
             }
@@ -165,7 +194,10 @@ export async function generateCvPdfBlob(
 
     renderElement(el);
 
-    if (i < cv.content.length - 1 && (el.type === "list" || el.type === "text")) {
+    if (
+      i < cv.content.length - 1 &&
+      (el.type === "list" || el.type === "richText" || el.type === "text")
+    ) {
       addVerticalSpace(baseFontSize * 0.5);
     }
   }
