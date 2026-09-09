@@ -46,7 +46,7 @@ export const sampleCv: CvDocument = {
         "Product & Design: UI/UX, complex interfaces, SVG/canvas/PDF interfaces, Figma, Adobe Creative Suite",
         "Integrations & Automation: API integrations, n8n, Sentry, PostHog",
         "Agentic Engineering: coding agents as the primary daily implementation interface for specification design, planning, implementation, testing, code review, and security audits",
-        "Languages: English (native), Russian (native), Spanish (B1)",
+        "Languages: English (B2), Russian (native), Spanish (A2)",
       ],
     ),
 

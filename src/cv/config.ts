@@ -5,7 +5,7 @@ export const defaultCvConfig: CvLayoutConfig = {
   baseFontSize: 12,
   h1FontSize: 20,
   h2FontSize: 16,
-  lineHeight: 1.5,
+  lineHeight: 1.4,
   subtitleColor: "#666666",
   pageMargin: {
     top: 40,
