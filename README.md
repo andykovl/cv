@@ -1,8 +1,8 @@
-## CV & Wikipedia PDF Downloader
+## CV 
 
 Simple web application that lets you:
 - **Download a ready-made CV as a PDF**, generated on the client using `jsPDF`.
-- **Download PDF versions of Wikipedia articles** by pasting a Wikipedia URL.
+- **Copy .mardown file**.
 
 ### Installation
 
