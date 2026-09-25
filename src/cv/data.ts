@@ -40,6 +40,7 @@ export const sampleCv: CvDocument = {
       [
         "Core: TypeScript, JavaScript",
         "Frontend: React, Next.js, Vite, Astro, Redux Toolkit, TanStack Query, TanStack Table, Zustand, Storybook, Tailwind CSS",
+        "Browser Extensions: Chrome Extensions, Manifest V3, WXT, Chrome APIs, service workers",
         "Backend & Data: Node.js, NestJS, PostgreSQL, TypeORM, Supabase Auth/Storage, Socket.IO, REST/OpenAPI",
         "Testing: Jest, Vitest, Playwright (E2E, accessibility)",
         "Platform: Docker, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
