@@ -32,66 +32,64 @@ export const sampleCv: CvDocument = {
 
     h2("Professional Summary"),
     text([
-      "Full-Stack TypeScript Engineer and product founder with a background in graphic design, building and operating complex SaaS products across frontend, backend, and infrastructure. Agent-first in daily development: I turn product requirements into specifications and use coding agents as the primary implementation interface while owning architecture, verification, and production outcomes.",
+      "Frontend / Product Engineer building React and Next.js interfaces for SaaS products. I combine TypeScript engineering with a graphic-design background to make complex workflows and real-time collaboration clear and usable. As a product founder, I own UX, frontend architecture, testing, and delivery end to end, and work across Node.js APIs when needed.",
     ]),
 
     h2("Skills"),
     text(
       [
-        "Core: TypeScript, JavaScript",
-        "Frontend: React, Next.js, Vite, Astro, Redux Toolkit, TanStack Query, TanStack Table, Zustand, Storybook, Tailwind CSS",
+        "Frontend: TypeScript, JavaScript, React, Next.js, Vite, Astro, Tailwind CSS",
+        "UI Architecture & State: TanStack Query, Zustand, Redux Toolkit, TanStack Table, Storybook, real-time interfaces",
+        "UX & Design: responsive UI, accessibility testing, SVG/canvas/PDF interfaces, Figma, Adobe Creative Suite",
         "Browser Extensions: Chrome Extensions, Manifest V3, WXT, Chrome APIs, service workers",
-        "Backend & Data: Node.js, NestJS, PostgreSQL, TypeORM, Supabase Auth/Storage, Socket.IO, REST/OpenAPI",
-        "Testing: Jest, Vitest, Playwright (E2E, accessibility)",
-        "Platform: Docker, AWS fundamentals, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
-        "Product & Design: UI/UX, complex interfaces, SVG/canvas/PDF interfaces, Figma, Adobe Creative Suite",
-        "Integrations & Automation: API integrations, n8n, Sentry, PostHog",
-        "Agentic Engineering: coding agents as the primary daily implementation interface for specification design, planning, implementation, testing, code review, and security audits",
+        "Testing & Observability: Jest, Vitest, Playwright (E2E, accessibility), Sentry, PostHog",
+        "Backend & APIs: Node.js, NestJS, PostgreSQL, TypeORM, Supabase Auth/Storage, Socket.IO, REST/OpenAPI",
+        "Delivery: Docker, AWS fundamentals, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
+        "AI-assisted Development: coding agents for specifications, implementation, testing, code review, and security audits",
         "Languages: English (B2), Russian (native), Spanish (A2)",
       ],
     ),
 
     h2("Professional Experience"),
 
-    h3("Founder / Full-Stack Engineer — Chains.design"),
+    h3("Founder / Full-Stack Engineer (Frontend Focus) — Chains.design"),
     subtitle("Barcelona, March 2023 – Present"),
     text([
-      "Built and operate a private-beta, multi-tenant workflow SaaS for editorial and design teams, used in production by a three-person external pilot team for two years, while owning product discovery, UX, architecture, development, and infrastructure end to end.",
+      "Founded and built a private-beta workflow SaaS for editorial and design teams, used in production by a three-person external pilot team for two years. Own product discovery, UX, frontend architecture, and delivery across the stack.",
     ]),
     list([
-      "Designed a visual DAG workflow builder with reusable templates, parallel branches and merge points, phase roles, per-work assignments, and a server-authoritative runtime that derives status and actionability from commits and approvals.",
-      "Built a real-time collaborative PDF review workspace with virtualized rendering, live presence and cursors, optimistic annotation editing, Socket.IO reconciliation, version-aware snapshots, and native-annotation PDF export.",
-      "Designed a scalable frontend architecture using TanStack Query for server state and Zustand for interaction state, with optimistic updates, targeted cache invalidation, and resilient real-time synchronization.",
-      "Designed a NestJS/PostgreSQL backend with TypeORM, shared typed HTTP/WebSocket contracts, tenant-aware authorization, Supabase Auth/Storage and hardened file handling.",
-      "Integrated Sentry and PostHog across client and server for observability and product analytics, and built secure Telegram account-linking and notification workflows with one-time tokens and transactional email delivery through Resend.",
-      "Established layered quality gates with Vitest, PostgreSQL-backed module and integration tests, Playwright full-stack E2E, Storybook, and Biome; built selective Docker/GitHub Actions delivery through GHCR to Hetzner with health checks and route smoke tests.",
+      "Designed and built a visual DAG workflow editor with reusable templates, parallel branches, merge points, role-based actions, and progress states derived from server data.",
+      "Built a collaborative PDF review UI with virtualized rendering, live presence and cursors, optimistic annotation editing, version-aware snapshots, Socket.IO reconciliation, and native-annotation PDF export.",
+      "Structured frontend state with TanStack Query for server data and Zustand for interaction state, using optimistic updates, targeted cache invalidation, and resilient real-time synchronization.",
+      "Established frontend quality gates with Vitest, Storybook, Playwright E2E and accessibility checks; used Sentry and PostHog to observe errors and product usage.",
+      "Built supporting NestJS/PostgreSQL APIs with typed HTTP/WebSocket contracts, tenant-aware authorization, and Supabase Auth/Storage; delivered through Docker and GitHub Actions.",
     ]),
 
     h3("Full-Stack Developer — Jupid (Fintech Startup)"),
     subtitle("Barcelona, April – October 2025"),
     text([
-      "Built core features and integrations for an early-stage fintech SaaS platform focused on AI-driven accounting. Worked directly with the CTO to design and implement backend integrations and core product functionality.",
+      "Worked directly with the CTO on product features for an early-stage AI accounting SaaS.",
     ]),
     list([
-      "Developed production frontend features using Next.js, TypeScript, and TanStack Query, focusing on performance and maintainability.",
-      "Implemented and maintained integrations with banking APIs (Banno), Stripe, Customer.io, and PostHog, ensuring reliable data flow and system stability.",
+      "Shipped production UI features with Next.js, TypeScript, and TanStack Query, focusing on performance and maintainability.",
+      "Implemented supporting integrations with banking APIs (Banno), Stripe, Customer.io, and PostHog to keep product data flows reliable.",
     ]),
 
-    h3("Front-end Developer — Kamina Mental Health Platform"),
+    h3("Frontend Developer — Kamina Mental Health Platform"),
     subtitle("Project-based, January 2024"),
     text([
-      "Developed a responsive landing page for Kamina, a mental health platform, within one month.",
+      "Designed and developed a responsive landing page for a mental health platform within one month.",
     ]),
     list([
       "Collaborated directly with stakeholders to refine requirements and ensure alignment with project goals.",
-      "Implemented an interactive SVG graphic to enhance user engagement and visual appeal.",
-      "Delivered an optimized site, ensuring compatibility across devices and browsers.",
+      "Built an interactive SVG graphic and refined the page's visual experience.",
+      "Optimized the site for different screen sizes and browsers.",
     ]),
 
     h3("Web Developer — Tomita Software"),
     subtitle("October 2020 – May 2023"),
     text([
-      "Supported 10 client web platforms in a ticket-driven workflow: diagnosing UI/layout issues and shipping incremental fixes across Symfony and React codebases.",
+      "Maintained the UI of 10 client web platforms, diagnosing layout and functional issues across React and Symfony codebases in a ticket-driven workflow.",
     ]),
     list([
       "Built several marketing sites from scratch; day-to-day work focused on production maintenance—small functional updates, template/CSS adjustments.",
@@ -101,12 +99,7 @@ export const sampleCv: CvDocument = {
     h3("Graphic Designer"),
     subtitle("Moscow, October 2017 – March 2023"),
     text([
-      "Designed editorial, branding, and wayfinding systems for public spaces.",
-    ]),
-    list([
-      "Designed 10+ books.",
-      "Issued 30+ magazines.",
-      "Prepared 150+ wayfinding stands for public spaces.",
+      "Designed editorial, branding, and wayfinding systems for public spaces: 10+ books, 30+ magazines, and 150+ wayfinding stands.",
     ]),
   ],
 };
