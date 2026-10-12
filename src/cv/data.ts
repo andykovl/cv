@@ -43,7 +43,7 @@ export const sampleCv: CvDocument = {
         "Browser Extensions: Chrome Extensions, Manifest V3, WXT, Chrome APIs, service workers",
         "Backend & Data: Node.js, NestJS, PostgreSQL, TypeORM, Supabase Auth/Storage, Socket.IO, REST/OpenAPI",
         "Testing: Jest, Vitest, Playwright (E2E, accessibility)",
-        "Platform: Docker, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
+        "Platform: Docker, AWS fundamentals, Git, pnpm workspaces, CI/CD (GitHub Actions), Linux/Nginx",
         "Product & Design: UI/UX, complex interfaces, SVG/canvas/PDF interfaces, Figma, Adobe Creative Suite",
         "Integrations & Automation: API integrations, n8n, Sentry, PostHog",
         "Agentic Engineering: coding agents as the primary daily implementation interface for specification design, planning, implementation, testing, code review, and security audits",
