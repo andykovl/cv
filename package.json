@@ -17,8 +17,6 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.17",
-		"hyphenation.en-us": "^0.2.1",
-		"hypher": "^0.2.5",
 		"jspdf": "^2.5.1",
 		"tailwindcss": "^4.1.17"
 	}

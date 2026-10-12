@@ -1,5 +1,4 @@
 import { jsPDF } from "jspdf";
-import { splitTextWithHyphenation } from "./utils";
 import type { CvDocument, CvElement, CvLayoutConfig } from "./types";
 
 export async function generateCvPdfBlob(
@@ -98,7 +97,7 @@ export async function generateCvPdfBlob(
         doc.setFont(fontFamily, "normal");
         doc.setFontSize(baseFontSize);
         doc.setTextColor(subtitleColor);
-        const lines = splitTextWithHyphenation(el.text, contentWidth, doc);
+        const lines = doc.splitTextToSize(el.text, contentWidth);
         writeLines(lines, contentX, baseFontSize);
         break;
       }
@@ -112,7 +111,7 @@ export async function generateCvPdfBlob(
 
         for (let i = 0; i < el.text.length; i++) {
           if (i > 0 && spacing > 0) addVerticalSpace(spacing);
-          const lines = splitTextWithHyphenation(el.text[i], contentWidth, doc);
+          const lines = doc.splitTextToSize(el.text[i], contentWidth);
           writeLines(lines, contentX, baseFontSize);
         }
 
@@ -160,7 +159,7 @@ export async function generateCvPdfBlob(
         const lineHeightPt = lineHeightFor(baseFontSize);
 
         for (const item of el.items) {
-          const lines: string[] = splitTextWithHyphenation(item, textWidth, doc);
+          const lines: string[] = doc.splitTextToSize(item, textWidth);
           ensureSpace(lines.length * lineHeightPt);
 
           for (let i = 0; i < lines.length; i++) {
